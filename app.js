@@ -1,29 +1,20 @@
-const input = document.getElementById("item");
-const btnAdd = document.getElementById("btn-add");
-const lista = document.getElementById("lista");
-
-btnAdd.addEventListener("click", adicionarItem);
-
-function adicionarItem() {
-  const valor = input.value.trim();
-
-  if (valor === "") {
-    alert("Digite um item válido!");
-    return;
-  }
-
-  const li = document.createElement("li");
-  li.textContent = valor;
-
-  // remover item clicando nele
-  li.addEventListener("click", () => {
-    lista.removeChild(li);
-  });
-
-  lista.appendChild(li);
-  input.value = "";
-  input.focus();
+function inserir(valor) {
+  document.getElementById("resultado").value += valor;
 }
 
+function limpar() {
+  document.getElementById("resultado").value = "";
+}
 
-scrip
+function apagar() {
+  let campo = document.getElementById("resultado").value;
+  document.getElementById("resultado").value = campo.substring(0, campo.length - 1);
+}
+
+function calcular() {
+  try {
+    document.getElementById("resultado").value = eval(document.getElementById("resultado").value);
+  } catch {
+    document.getElementById("resultado").value = "Erro";
+  }
+}
