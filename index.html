@@ -2,24 +2,38 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Compras</title>
+  <title>Calculadora Simples</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <h1>🛒 Minha Lista de Compras</h1>
-    
-    <div class="form">
-      <input type="text" id="item" placeholder="Digite um item">
-      <button id="btn-add">Adicionar</button>
+  <div class="calculadora">
+    <input type="text" id="resultado" disabled>
+    <div class="botoes">
+      <button onclick="limpar()">C</button>
+      <button onclick="apagar()">⌫</button>
+      <button onclick="inserir('/')">÷</button>
+      <button onclick="inserir('*')">×</button>
+
+      <button onclick="inserir('7')">7</button>
+      <button onclick="inserir('8')">8</button>
+      <button onclick="inserir('9')">9</button>
+      <button onclick="inserir('-')">−</button>
+
+      <button onclick="inserir('4')">4</button>
+      <button onclick="inserir('5')">5</button>
+      <button onclick="inserir('6')">6</button>
+      <button onclick="inserir('+')">+</button>
+
+      <button onclick="inserir('1')">1</button>
+      <button onclick="inserir('2')">2</button>
+      <button onclick="inserir('3')">3</button>
+      <button class="igual" onclick="calcular()">=</button>
+
+      <button onclick="inserir('0')" style="grid-column: span 2;">0</button>
+      <button onclick="inserir('.')">.</button>
     </div>
+  </div>
 
-    <ul id="lista"></ul>
-  </main>
-
-  <script src="app.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
-
-
